@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://java.sun.com/jsf/html">
+<h:head>
+</h:head>
+<h:body>
+    <div class="p-d-flex">
+        <div class="p-mr-2">
+            <p:dataTable var="store" value="#{storeAppBean.storeList}">
+                <p:column headerText="store name">
+                    <h:outputText value="#{store.name}"/>
+                </p:column>
+
+                <p:column headerText="store location">
+                    <h:outputText value="#{store.location}"/>
+                </p:column>
+
+                <p:column headerText="store list of inventory">
+                    <h:outputText value="#{store.listOfInventory}"/>
+                </p:column>
+
+            </p:dataTable>
+        </div>
+        <div class="p-mr-2" style="margin-top: 2em">
+            <h:form>
+                <div class="p-field" style="margin: 2em">
+                    <p:outputLabel for="name" style="margin-right: 1em">store name: </p:outputLabel>
+                    <p:inputText id="name" type="text" value="#{storeAppBean.name}"/>
+                </div>
+                <div class="p-field" style="margin: 2em">
+                    <p:outputLabel for="location" style="margin-right: 1em">store location: </p:outputLabel>
+                    <p:inputText id="location" type="text" value="#{storeAppBean.location}"/>
+                </div>
+                <div class="p-field" style="margin: 2em">
+                    <p:outputLabel for="listOfInventory" style="margin-right: 1em">store list of inventory: </p:outputLabel>
+                    <p:inputText id="listOfInventory" type="text" value="#{storeAppBean.listOfInventory}"/>
+                </div>
+            </h:form>
+        </div>
+    </div>
+
+</h:body>
+</html>

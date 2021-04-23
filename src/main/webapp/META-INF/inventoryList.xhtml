@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+    <div class="p-d-flex">
+        <div class="p-mr-2">
+            <p:dataTable var="inventory" value="#{inventoryAppBean.inventoryList}">
+                <p:column headerText="Inventory name">
+                    <h:outputText value="#{inventory.name}"/>
+                </p:column>
+
+                <p:column headerText="Inventory sport">
+                    <h:outputText value="#{inventory.sport}"/>
+                </p:column>
+
+                <p:column headerText="Inventory quantity">
+                    <h:outputText value="#{inventory.quantity}"/>
+                </p:column>
+
+            </p:dataTable>
+        </div>
+        <div class="p-mr-2" style="margin-top: 2em">
+            <p:dataTable var="inventory" value="#{inventoryAppBean.waitList}">
+                <p:column headerText="Inventory name">
+                    <h:outputText value="#{inventory.name}"/>
+                </p:column>
+
+                <p:column headerText="Inventory sport">
+                    <h:outputText value="#{inventory.sport}"/>
+                </p:column>
+
+                <p:column headerText="Inventory date">
+                    <h:outputText value="#{inventory.inventoryDate}"/>
+                </p:column>
+            </p:dataTable>
+        </div>
+        <div class="p-mr-2" style="margin-top: 2em">
+            <h:form>
+                <div class="p-field" style="margin: 2em">
+                    <p:outputLabel for="name" style="margin-right: 1em">Inventory name: </p:outputLabel>
+                    <p:inputText id="name" type="text" value="#{inventoryAppBean.name}"/>
+                    <p:message for="@previous"/>
+                </div>
+                <div class="p-field" style="margin: 2em">
+                    <p:outputLabel for="request" style="margin-right: 1em">Request: </p:outputLabel>
+                    <p:inputTextarea id="request" rows="6" cols="33" value="#{inventoryAppBean.requestText}"/>
+                    <p:message for="@previous"/>
+                </div>
+                <div class="p-field" style="margin: 2em">
+                    <p:commandButton style="margin: 2em" type="submit" action="#{inventoryAppBean.addRequest}"
+                                     value="Add player request" ajax="false" validateClient="true"
+                                     icon="pi pi-check" iconPos="right"/>
+                </div>
+            </h:form>
+        </div>
+    </div>
+
+</h:body>
+</html>

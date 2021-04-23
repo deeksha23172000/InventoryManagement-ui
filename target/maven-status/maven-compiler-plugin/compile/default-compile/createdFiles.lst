@@ -1,0 +1,4 @@
+com\Deeksha\InventoryAppBean.class
+com\Deeksha\interceptor\Logged.class
+com\Deeksha\interceptor\LoggedInterceptor.class
+com\Deeksha\StoreAppBean.class
